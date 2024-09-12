@@ -10,7 +10,10 @@ import EnumMacrosMacros
 
 let testMacros: [String: Macro.Type] = [
     "EnumTitle": EnumTitleMacro.self,
+    "EnumLocalizedTitle": EnumLocalizedTitleMacro.self,
     "CaseDetection": EnumCaseDetectionMacro.self,
+    "EnumSpacedTitle": EnumSpacedTitleMacro.self,
+    "EnumSpacedTitleLocalized": EnumSpacedTitleLocalizedMacro.self,
 ]
 #endif
 
@@ -34,6 +37,31 @@ final class EnumMacrosTests: XCTestCase {
                     return "Male"
                 case .female:
                     return "Female"
+                }
+            }
+        }
+        """ , macros:testMacros)
+    }
+    
+    func testEnumSpacedTitleMacro() {
+        assertMacroExpansion("""
+        @EnumSpacedTitle
+        enum Gender {
+           case genderMale
+           case genderFemale
+        }
+        """ , expandedSource: """
+        
+        enum Gender {
+           case genderMale
+           case genderFemale
+
+            var title: String {
+                switch self {
+                case .genderMale:
+                    return "Gender Male"
+                case .genderFemale:
+                    return "Gender Female"
                 }
             }
         }

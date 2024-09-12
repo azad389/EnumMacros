@@ -1,11 +1,17 @@
 import EnumMacros
 //usage example
 
-@EnumTitle
 @CaseDetection
+@EnumSpacedTitle
 enum Compass{
-    case east
-    case west
-    case north
-    case south
+    case EastStand
+    case EestStand
+    case EorthStand
+    case southStand
+}
+
+@EnumSpacedTitle
+enum Gender{
+  case genderMale
+  case genderFemale
 }
