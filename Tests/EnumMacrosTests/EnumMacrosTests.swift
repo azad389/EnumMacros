@@ -10,10 +10,8 @@ import EnumMacrosMacros
 
 let testMacros: [String: Macro.Type] = [
     "EnumTitle": EnumTitleMacro.self,
-    "EnumLocalizedTitle": EnumLocalizedTitleMacro.self,
     "CaseDetection": EnumCaseDetectionMacro.self,
     "EnumSpacedTitle": EnumSpacedTitleMacro.self,
-    "EnumSpacedTitleLocalized": EnumSpacedTitleLocalizedMacro.self,
 ]
 #endif
 

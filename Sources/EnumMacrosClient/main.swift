@@ -10,8 +10,3 @@ enum Compass{
     case southStand
 }
 
-@EnumSpacedTitle
-enum Gender{
-  case genderMale
-  case genderFemale
-}
